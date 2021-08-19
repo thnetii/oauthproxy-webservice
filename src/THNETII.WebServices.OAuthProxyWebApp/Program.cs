@@ -13,6 +13,11 @@ namespace THNETII.WebServices.OAuthProxyWebApp
 
         public static IHostBuilder CreateHostBuilder(string[]? args) =>
             Host.CreateDefaultBuilder(args ?? Array.Empty<string>())
-                .ConfigureWebHostDefaults(wb => wb.UseStartup(ctx => new Startup(ctx)));
+                .ConfigureWebHostDefaults(wb =>
+                {
+                    Startup st = new();
+                    wb.ConfigureServices(st.ConfigureServices);
+                    wb.Configure(st.Configure);
+                });
     }
 }

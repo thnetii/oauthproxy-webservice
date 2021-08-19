@@ -13,22 +13,15 @@ namespace THNETII.WebServices.OAuthProxyWebApp
     public class Startup
     {
         private const string SwaggerUrlName = "current";
-        private readonly WebHostBuilderContext context;
 
-        public OpenApiInfo OpenApiInfo { get; }
-
-        public Startup(WebHostBuilderContext context) : base()
+        public OpenApiInfo OpenApiInfo { get; } = new()
         {
-            this.context = context ?? throw new ArgumentNullException(nameof(context));
+            Title = "OAuth HTTP Proxy",
+            Version = typeof(Startup).Assembly.GetName()?.Version?.ToString(2)
+        };
 
-            OpenApiInfo = new()
-            {
-                Title = "OAuth HTTP Proxy",
-                Version = GetType().Assembly.GetName()?.Version?.ToString(2)
-            };
-        }
-
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(WebHostBuilderContext context,
+            IServiceCollection services)
         {
             services.AddSingleton(this);
             services.AddRazorPages();
@@ -54,7 +47,8 @@ namespace THNETII.WebServices.OAuthProxyWebApp
 #endif
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(WebHostBuilderContext context,
+            IApplicationBuilder app)
         {
             var env = context.HostingEnvironment;
             if (env.IsDevelopment())
