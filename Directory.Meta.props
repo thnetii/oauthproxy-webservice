@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup Label="Common Package Metadata">
-    <Authors>Fredrik HÃ¸isÃ¦ther Rasch</Authors>
+    <Authors>Fredrik Høisæther Rasch</Authors>
     <Product>TH-NETII Software development</Product>
     <Company>TH-NETII Rasch Solutions</Company>
-    <Copyright>Written by Fredrik HÃ¸isÃ¦ther Rasch, $([System.DateTime]::Now.Year)</Copyright>
+    <Copyright>Written by $(Authors), $([System.DateTime]::Now.Year)</Copyright>
   </PropertyGroup>
 </Project>
