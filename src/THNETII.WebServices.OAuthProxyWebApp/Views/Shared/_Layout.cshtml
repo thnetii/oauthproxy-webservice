@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - @Startup.OpenApiInfo.Title</title>
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap-grid.css"
+              integrity="sha256-JtktgiuQAd+AXerCnPMrHCDz1h5AtkH5tobvpuG7xZ4="
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap-grid.css"
+              asp-fallback-test-class="d-block" asp-fallback-test-property="display" asp-fallback-test-value="block"
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="~/css/fast-design-system.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/lib/microsoft/fluentui-system-icons/fonts/FluentSystemIcons-Regular.css" />
+        <link rel="stylesheet" href="~/lib/microsoft/fluentui-system-icons/fonts/FluentSystemIcons-Regular.css"
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap-grid.min.css"
