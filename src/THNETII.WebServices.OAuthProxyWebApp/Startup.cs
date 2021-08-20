@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using System.Text.Json.Serialization;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
@@ -20,18 +20,18 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             Version = typeof(Startup).Assembly.GetName()?.Version?.ToString(2)
         };
 
-        public void ConfigureServices(WebHostBuilderContext context,
-            IServiceCollection services)
+        public Startup(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
+        private readonly IConfiguration configuration;
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(this);
-            services.AddRazorPages();
-            services.AddControllers()
-                .AddJsonOptions(json =>
-                {
-                    json.JsonSerializerOptions.Converters.Add(
-                        new JsonStringEnumConverter()
-                    );
-                });
+            services.AddControllersWithViews();
             services.AddSwaggerGen(swaggerConfig =>
             {
                 swaggerConfig.SwaggerDoc(SwaggerUrlName, OpenApiInfo);
@@ -42,28 +42,24 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             });
 #if DEBUG
             services.AddApplicationInsightsTelemetry(
-                context.Configuration.GetSection(nameof(Microsoft.ApplicationInsights))
+                configuration.GetSection(nameof(Microsoft.ApplicationInsights))
             );
 #endif
         }
 
-        public void Configure(WebHostBuilderContext context,
-            IApplicationBuilder app)
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var env = context.HostingEnvironment;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                // app.UseExceptionHandler("/error");
-#if DEBUG
-                app.UseBrowserLink();
-#endif
             }
             else
             {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
 
             app.UseSwaggerUI(swaggerConfig =>
@@ -83,8 +79,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapSwagger();
-                endpoints.MapRazorPages();
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

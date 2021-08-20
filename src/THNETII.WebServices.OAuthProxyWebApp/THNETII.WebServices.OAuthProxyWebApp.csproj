@@ -10,34 +10,30 @@
     <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Label="Web development dependecies">
     <PackageReference Include="BuildBundlerMinifier">
       <Version>3.2.449</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Condition="'$(Configuration)'=='Debug'">
-      <Version>2.18.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Condition="'$(Configuration)'=='Debug'">
-      <Version>2.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design">
-      <Version>5.0.2</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.LibraryManager.Build">
       <Version>2.1.113</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore">
-      <Version>6.1.5</Version>
+  </ItemGroup>
+
+  <ItemGroup Label="Debug dependecies" Condition="'$(Configuration)'=='Debug'">
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore">
+      <Version>2.18.0</Version>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations">
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore">
       <Version>6.1.5</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Http.Json">
       <Version>5.0.0</Version>
     </PackageReference>
   </ItemGroup>
-
+  
 </Project>
