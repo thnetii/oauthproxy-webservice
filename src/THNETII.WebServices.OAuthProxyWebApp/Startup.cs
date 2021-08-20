@@ -53,9 +53,6 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-#if DEBUG
-                app.UseBrowserLink();
-#endif
             }
             else
             {
@@ -64,6 +61,10 @@ namespace THNETII.WebServices.OAuthProxyWebApp
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+#if DEBUG
+            app.UseBrowserLink();
+#endif
 
             app.UseSwaggerUI(swaggerConfig =>
             {
