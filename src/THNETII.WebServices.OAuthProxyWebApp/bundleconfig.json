@@ -15,5 +15,11 @@
       "renameLocals": true
     },
     "sourceMap": true
+  },
+  {
+    "outputFileName": "wwwroot/css/fast-design-system.min.css",
+    "inputFiles": [
+      "wwwroot/css/fast-design-system.css"
+    ]
   }
 ]
