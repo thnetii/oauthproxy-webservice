@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -17,6 +17,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7D1A074-3CF6-4137-8464-6C48A0CD8957}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THNETII.WebServices.OAuthProxyWebApp", "src\THNETII.WebServices.OAuthProxyWebApp\THNETII.WebServices.OAuthProxyWebApp.csproj", "{216210E7-1124-4172-B7B5-602376BED8A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "template", "template", "{E814A901-E346-4EBA-9A19-6F70A8436D12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THNETII.WebServices.MvcTemplateWebApp", "template\THNETII.WebServices.MvcTemplateWebApp\THNETII.WebServices.MvcTemplateWebApp.csproj", "{D25B346B-947B-4E43-A4B0-27AB17F58819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,12 +44,25 @@ Global
 		{216210E7-1124-4172-B7B5-602376BED8A7}.Release|x64.Build.0 = Release|Any CPU
 		{216210E7-1124-4172-B7B5-602376BED8A7}.Release|x86.ActiveCfg = Release|Any CPU
 		{216210E7-1124-4172-B7B5-602376BED8A7}.Release|x86.Build.0 = Release|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Debug|x64.Build.0 = Debug|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Debug|x86.Build.0 = Debug|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Release|x64.ActiveCfg = Release|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Release|x64.Build.0 = Release|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Release|x86.ActiveCfg = Release|Any CPU
+		{D25B346B-947B-4E43-A4B0-27AB17F58819}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{216210E7-1124-4172-B7B5-602376BED8A7} = {F7D1A074-3CF6-4137-8464-6C48A0CD8957}
+		{D25B346B-947B-4E43-A4B0-27AB17F58819} = {E814A901-E346-4EBA-9A19-6F70A8436D12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4B6507C-0B39-4CC9-8182-744041BE990E}
