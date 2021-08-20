@@ -53,6 +53,9 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+#if DEBUG
+                app.UseBrowserLink();
+#endif
             }
             else
             {
