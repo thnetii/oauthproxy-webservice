@@ -31,7 +31,9 @@ namespace THNETII.WebServices.OAuthProxyWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(this);
-            services.AddControllersWithViews();
+            //services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddRazorPages();
             services.AddSwaggerGen(swaggerConfig =>
             {
                 swaggerConfig.SwaggerDoc(SwaggerUrlName, OpenApiInfo);
@@ -56,7 +58,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -83,7 +85,8 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapSwagger();
-                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
             });
         }
     }
