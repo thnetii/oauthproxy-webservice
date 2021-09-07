@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
+[assembly: CLSCompliant(false)]
+
 namespace THNETII.WebServices.OAuthProxyWebApp
 {
     public static class Program
@@ -20,7 +22,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             {
                 Handler = CommandHandler.Create(
                     (IHost host, CancellationToken cancelToken) =>
-                        host.RunAsync(cancelToken)
+                        host.WaitForShutdownAsync(cancelToken)
                 )
             };
             var parser = new CommandLineBuilder(rootCommand)
