@@ -34,9 +34,12 @@
         "watch",
         "--project",
         "${workspaceFolder}/src/THNETII.WebServices.OAuthProxyWebApp",
+        "--",
         "run",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
+        "--framework",
+        "net5.0",
+        "--launch-profile",
+        "THNETII.WebServices.OAuthProxyWebApp"
       ],
       "problemMatcher": "$msCompile"
     }

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "codezombiech.gitignore",
+    "ms-dotnettools.csharp",
+    "tintoy.msbuild-project-tools",
+    "redhat.vscode-xml",
+    "humao.rest-client"
+  ]
+}
