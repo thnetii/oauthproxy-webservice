@@ -8,7 +8,7 @@
       "name": "OAuthProxyWebApp Launch (web)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build OAuthProxyWebApp",
       // If you have changed target frameworks, make sure to update the program path.
       "program": "${workspaceFolder}/bin/THNETII.WebServices.OAuthProxyWebApp/Debug/net5.0/THNETII.WebServices.OAuthProxyWebApp.dll",
       "args": [],
@@ -20,7 +20,8 @@
         "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
       },
       "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
       },
       "sourceFileMap": {
         "/Views": "${workspaceFolder}/Views"

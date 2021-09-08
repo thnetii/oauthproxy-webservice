@@ -27,6 +27,18 @@
       "problemMatcher": "$msCompile"
     },
     {
+      "label": "build OAuthProxyWebApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/THNETII.WebServices.OAuthProxyWebApp",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
       "label": "watch OAuthProxyWebApp",
       "command": "dotnet",
       "type": "process",
