@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
+[assembly: CLSCompliant(false)]
+
 namespace THNETII.WebServices.MvcTemplateWebApp
 {
-    public class Program
+    public static class Program
     {
         public static Task<int> Main(string[]? args)
         {

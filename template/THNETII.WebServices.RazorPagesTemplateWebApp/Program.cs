@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
+[assembly: CLSCompliant(false)]
+
 namespace THNETII.WebServices.RazorPagesTemplateWebApp
 {
     public static class Program
