@@ -20,11 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THNETII.WebServices.OAuthPr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "template", "template", "{E814A901-E346-4EBA-9A19-6F70A8436D12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THNETII.WebServices.MvcTemplateWebApp", "template\THNETII.WebServices.MvcTemplateWebApp\THNETII.WebServices.MvcTemplateWebApp.csproj", "{D25B346B-947B-4E43-A4B0-27AB17F58819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THNETII.WebServices.MvcTemplateWebApp", "template\THNETII.WebServices.MvcTemplateWebApp\THNETII.WebServices.MvcTemplateWebApp.csproj", "{D25B346B-947B-4E43-A4B0-27AB17F58819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THNETII.WebServices.RazorPagesTemplateWebApp", "template\THNETII.WebServices.RazorPagesTemplateWebApp\THNETII.WebServices.RazorPagesTemplateWebApp.csproj", "{61D8244C-229E-4267-9FE7-B4FA206F0739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THNETII.WebServices.RazorPagesTemplateWebApp", "template\THNETII.WebServices.RazorPagesTemplateWebApp\THNETII.WebServices.RazorPagesTemplateWebApp.csproj", "{61D8244C-229E-4267-9FE7-B4FA206F0739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI", "src\THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI\THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI.csproj", "{F1ED3C3A-AEA0-4737-9ED9-5C64A120F111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI", "src\THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI\THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI.csproj", "{F1ED3C3A-AEA0-4737-9ED9-5C64A120F111}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

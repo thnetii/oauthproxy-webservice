@@ -26,6 +26,31 @@
       "provider": "jsdelivr",
       "library": "@popperjs/core@2.9.3",
       "destination": "wwwroot/lib/@popperjs/core"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.css",
+      "destination": "wwwroot/lib/office-ui-fabric-core/css"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css",
+      "destination": "wwwroot/lib/office-ui-fabric-core/css"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdn.jsdelivr.net/gh/microsoft/fluentui-system-icons@1.1.139/fonts/FluentSystemIcons-Regular.css",
+      "destination": "wwwroot/lib/microsoft/fluentui-system-icons/fonts"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdn.jsdelivr.net/gh/microsoft/fluentui-system-icons@1.1.139/fonts/FluentSystemIcons-Regular.ttf",
+      "destination": "wwwroot/lib/microsoft/fluentui-system-icons/fonts"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdn.jsdelivr.net/gh/microsoft/fluentui-system-icons@1.1.139/fonts/FluentSystemIcons-Regular.min.css",
+      "destination": "wwwroot/lib/microsoft/fluentui-system-icons/fonts"
     }
   ]
 }

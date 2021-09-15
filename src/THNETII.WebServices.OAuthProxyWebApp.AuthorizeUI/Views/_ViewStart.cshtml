@@ -1,3 +1,9 @@
+@using System.Linq
+@using System.Reflection
 @{
     Layout = "_Layout";
+    ViewData["StaticWebAssetBasePath"] = GetType().GetCustomAttributes<AssemblyMetadataAttribute>()
+            .Where(attr => attr.Key == "StaticWebAssetBasePath")
+            .FirstOrDefault()?.Value;
+    ViewData["AppName"] = $"{nameof(THNETII.WebServices.OAuthProxyWebApp.AuthorizeUI)} - {nameof(THNETII.WebServices.OAuthProxyWebApp)}";
 }
