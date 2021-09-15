@@ -31,12 +31,39 @@ namespace THNETII.WebServices.OAuthProxyWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(this);
-            services.AddMvc();
+            services.AddMvcCore().AddApiExplorer();
             services.AddRazorPages();
-            services.AddControllersWithViews();
+            //services.AddControllersWithViews();
             services.AddSwaggerGen(swaggerConfig =>
             {
                 swaggerConfig.SwaggerDoc(SwaggerUrlName, OpenApiInfo);
+                swaggerConfig.AddSecurityDefinition("oauth2", new()
+                {
+                    Type = SecuritySchemeType.OAuth2,
+                    Flows = new()
+                    {
+                        AuthorizationCode = new()
+                        {
+                            AuthorizationUrl = new Uri("/authorize", UriKind.Relative),
+                            TokenUrl = new Uri("/token", UriKind.Relative),
+                            RefreshUrl = new Uri("/token", UriKind.Relative)
+                        }
+                    }
+                });
+                swaggerConfig.AddSecurityRequirement(new()
+                {
+                    {
+                        new()
+                        {
+                            Reference = new()
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "oauth2"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
                 swaggerConfig.IncludeXmlComments(Path.Combine(
                     AppContext.BaseDirectory,
                     GetType().Assembly.GetName()?.Name + ".xml"
@@ -74,6 +101,9 @@ namespace THNETII.WebServices.OAuthProxyWebApp
                     $"/swagger/{SwaggerUrlName}/swagger.json",
                     OpenApiInfo.Title
                 );
+                swaggerConfig.OAuthScopes();
+                swaggerConfig.OAuthUsePkce();
+                swaggerConfig.OAuthClientId(nameof(Swashbuckle.AspNetCore.SwaggerUI));
             });
 
             app.UseStaticFiles();
@@ -86,7 +116,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             {
                 endpoints.MapSwagger();
                 endpoints.MapRazorPages();
-                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapDefaultControllerRoute();
             });
         }
     }
