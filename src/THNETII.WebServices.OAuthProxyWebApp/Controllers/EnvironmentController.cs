@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mime;
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
@@ -59,6 +61,30 @@ namespace THNETII.WebServices.OAuthProxyWebApp.Controllers
             }
 
             return Ok(string.Join("\r\n", filePaths));
+        }
+
+
+        [HttpGet("[action]")]
+        [EnvironmentFilter(nameof(Environments.Development))]
+        public ActionResult Routes(
+            [FromServices] IActionDescriptorCollectionProvider provider
+            )
+        {
+            return Ok(new
+            {
+                version = provider?.ActionDescriptors?.Version,
+                value = provider?.ActionDescriptors?.Items?
+                    .Select(desc =>
+                    {
+                        return new
+                        {
+                            desc.Id,
+                            desc.DisplayName,
+                            desc.ActionConstraints
+                        };
+                    })
+                    ?? Enumerable.Empty<object>()
+            });
         }
     }
 }
