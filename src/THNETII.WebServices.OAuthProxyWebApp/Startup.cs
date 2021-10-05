@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
+using THNETII.WebServices.OAuthProxyWebApp.Services;
+
 namespace THNETII.WebServices.OAuthProxyWebApp
 {
     public class Startup
@@ -73,6 +75,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
                 configuration.GetSection(nameof(Microsoft.ApplicationInsights))
             );
 #endif
+            services.AddScoped<EnvironmentFilterAttribute>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
