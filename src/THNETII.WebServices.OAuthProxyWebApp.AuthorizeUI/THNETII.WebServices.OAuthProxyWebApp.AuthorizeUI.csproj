@@ -20,12 +20,18 @@
     </PackageReference>
   </ItemGroup>
 
-  <Target Name="AddStaticWebAssetsAssemblyMetadataAttribute" DependsOnTargets="ResolveStaticWebAssetsConfiguration" BeforeTargets="GetAssemblyAttributes">
+  <Target Name="AddStaticWebAssetsAssemblyMetadataAttribute"
+          DependsOnTargets="ResolveStaticWebAssetsConfiguration"
+          BeforeTargets="CreateGeneratedAssemblyInfoInputsCacheFile;_CreateRazorTargetAssemblyInfoInputsCacheFile">
     <ItemGroup>
-      <RazorAssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
         <_Parameter1>StaticWebAssetBasePath</_Parameter1>
         <_Parameter2>$(StaticWebAssetBasePath)</_Parameter2>
-      </RazorAssemblyAttribute>
+      </AssemblyAttribute>
+      <RazorTargetAssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+        <_Parameter1>StaticWebAssetBasePath</_Parameter1>
+        <_Parameter2>$(StaticWebAssetBasePath)</_Parameter2>
+      </RazorTargetAssemblyAttribute>
     </ItemGroup>
   </Target>
 
