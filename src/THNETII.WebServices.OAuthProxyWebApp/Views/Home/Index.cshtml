@@ -1,9 +1,8 @@
-@page
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home Page";
 }
 
 <h1>Welcome</h1>
 <p>Learn about <fluent-anchor appearance="hypertext" href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</fluent-anchor>.</p>
 <p>Go to the <fluent-anchor appearance="hypertext" href="@Href("~/swagger")">Swagger UI page</fluent-anchor> to see the API definition and test the available endpoints.</p>
-<p>Authorize page: <fluent-anchor appearance="hypertext" href="@Url.Page("Authorize/Index")">Authorize</fluent-anchor></p>
+<p>Authorize page: <fluent-anchor appearance="hypertext" href="@Url.Action(controller: "Authorize", action: "Index")">Authorize</fluent-anchor></p>

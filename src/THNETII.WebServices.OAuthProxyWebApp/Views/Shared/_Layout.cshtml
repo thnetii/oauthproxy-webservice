@@ -37,12 +37,12 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - @Startup.OpenApiInfo.Title - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - @Startup.OpenApiInfo.Title - <fluent-anchor appearance="hypertext" href="@Url.Action(controller: "Home", action: "Privacy", values: new { area = "" })">Privacy</fluent-anchor>
         </div>
     </footer>
 
     <environment include="Development">
-        <script type="module" src="~/lib/@@fluentui/web-components/dist/web-components.js"></script>
+        <script type="module" src="~/lib/@('@')fluentui/web-components/dist/web-components.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">

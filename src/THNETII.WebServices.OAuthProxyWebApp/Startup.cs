@@ -32,8 +32,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
         {
             services.AddSingleton(this);
             services.AddMvcCore().AddApiExplorer();
-            services.AddRazorPages();
-            //services.AddControllersWithViews();
+            services.AddControllersWithViews();
             services.AddSwaggerGen(swaggerConfig =>
             {
                 swaggerConfig.SwaggerDoc(SwaggerUrlName, OpenApiInfo);
@@ -115,8 +114,7 @@ namespace THNETII.WebServices.OAuthProxyWebApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapSwagger();
-                endpoints.MapRazorPages();
-                //endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
             });
         }
     }

@@ -19,6 +19,10 @@
       <Version>2.1.113</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation">
+      <Version>5.0</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup Label="Debug dependecies" Condition="'$(Configuration)'=='Debug'">
