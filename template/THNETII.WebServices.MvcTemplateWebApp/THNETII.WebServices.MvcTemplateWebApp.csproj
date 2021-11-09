@@ -14,7 +14,7 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design">
-      <Version>5.0.2</Version>
+      <Version>6.0.0</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
